@@ -21,7 +21,7 @@ pub fn run1(input: &[String]) {
         diff +=  (col1[i] - col2[i]).abs();
     }
 
-    print!("Distance: {}", diff);
+    print!("Distance: {}\n", diff);
 }
 
 pub fn run2(input: &[String]) {

@@ -3,6 +3,7 @@ use chrono::Local;
 use std::fs::File;
 use std::io::{self, BufRead};
 use std::path::Path;
+use std::time::Instant;
 mod days;
 
 fn read_input(file_path: &str) -> io::Result<Vec<String>> {
@@ -20,8 +21,16 @@ fn main() {
     match day {
         1 => {
             let input = read_input("src/days/day01/input02.txt").expect("Failed to read input");
+            
+            let start = Instant::now();
             days::day01::run1(&input);
+            let duration = start.elapsed();
+            println!("run1 took: {:?}", duration);
+
+            let start = Instant::now();
             days::day01::run2(&input);
+            let duration = start.elapsed();
+            println!("run2 took: {:?}", duration);
         },
         _ => println!("No challenge for this day!"),
     }
