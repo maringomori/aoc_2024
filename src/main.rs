@@ -20,15 +20,29 @@ fn main() {
 
     match day {
         1 => {
-            let input = read_input("src/days/day01/input02.txt").expect("Failed to read input");
-            
+            let input = read_input("src/days/day01/input01.txt").expect("Failed to read input");
             let start = Instant::now();
             days::day01::run1(&input);
             let duration = start.elapsed();
             println!("run1 took: {:?}", duration);
 
+            let input = read_input("src/days/day01/input02.txt").expect("Failed to read input");
             let start = Instant::now();
             days::day01::run2(&input);
+            let duration = start.elapsed();
+            println!("run2 took: {:?}", duration);
+        },
+        2 => {
+            let input = read_input("src/days/day02/input01.txt").expect("Failed to read input");
+            
+            let start = Instant::now();
+            days::day02::run1(&input);
+            let duration = start.elapsed();
+            println!("run1 took: {:?}", duration);
+
+            let input = read_input("src/days/day02/input02.txt").expect("Failed to read input");
+            let start = Instant::now();
+            days::day02::run2(&input);
             let duration = start.elapsed();
             println!("run2 took: {:?}", duration);
         },
