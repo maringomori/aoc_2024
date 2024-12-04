@@ -16,7 +16,7 @@ fn read_input(file_path: &str) -> io::Result<Vec<String>> {
 
 fn main() {
     let today = Local::now();
-    let day = today.day();
+    let day = 3;
 
     match day {
         1 => {
@@ -43,6 +43,38 @@ fn main() {
             let input = read_input("src/days/day02/input02.txt").expect("Failed to read input");
             let start = Instant::now();
             days::day02::run2(&input);
+            let duration = start.elapsed();
+            println!("run2 took: {:?}", duration);
+        },
+        3 => {
+          
+            let input = read_input("src/days/day03/input01.txt").expect("Failed to read input");
+            
+            let start = Instant::now();
+            days::day03::run1(&input);
+            let duration = start.elapsed();
+            println!("run1 took: {:?}", duration);
+    
+
+            let input = read_input("src/days/day03/input02.txt").expect("Failed to read input");
+            let start = Instant::now();
+            days::day03::run2(&input);
+            let duration = start.elapsed();
+            println!("run2 took: {:?}", duration);
+        },
+        4 => {
+           
+
+            let input = read_input("src/days/day04/input01.txt").expect("Failed to read input");
+            
+            let start = Instant::now();
+            days::day04::run1(&input);
+            let duration = start.elapsed();
+            println!("run1 took: {:?}", duration);
+           
+            let input = read_input("src/days/day04/input02.txt").expect("Failed to read input");
+            let start = Instant::now();
+            days::day04::run2(&input);
             let duration = start.elapsed();
             println!("run2 took: {:?}", duration);
         },
