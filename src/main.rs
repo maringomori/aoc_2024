@@ -16,7 +16,7 @@ fn read_input(file_path: &str) -> io::Result<Vec<String>> {
 
 fn main() {
     let today = Local::now();
-    let day = 3;
+    let day = today.day();
 
     match day {
         1 => {
@@ -77,6 +77,15 @@ fn main() {
             days::day04::run2(&input);
             let duration = start.elapsed();
             println!("run2 took: {:?}", duration);
+        },
+        5 => {
+            
+            let input = read_input("src/days/day05/input01.txt").expect("Failed to read input");
+            
+            let start = Instant::now();
+            days::day05::run1(&input);
+            let duration = start.elapsed();
+            println!("run1 took: {:?}", duration);
         },
         _ => println!("No challenge for this day!"),
     }
