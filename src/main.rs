@@ -87,6 +87,22 @@ fn main() {
             let duration = start.elapsed();
             println!("run1 took: {:?}", duration);
         },
+        6 => {
+            let input = read_input("src/days/day06/input01.txt").expect("Failed to read input");
+            
+            let start = Instant::now();
+            days::day06::run1(&input);
+            let duration = start.elapsed();
+            println!("run1 took: {:?}", duration);
+
+            let input = read_input("src/days/day06/input02.txt").expect("Failed to read input");
+            
+            let start = Instant::now();
+            days::day06::run2(&input);
+            let duration = start.elapsed();
+            println!("run2 took: {:?}", duration);
+
+        },
         _ => println!("No challenge for this day!"),
     }
 }
